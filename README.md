@@ -6,6 +6,8 @@ To activate the camera when the player gets killed just copy the Description.ext
 You can also execute the camera during the mission by using `[player] execVM "/scripts/initCam.sqf"`, just be aware that there is right now no way to exit the spectator camera, so you will be stuck in the camera until you respawn.
 
 ## Controls
+Keybind | Usage
+------- | -----
 WASD | General movement
 QE | Vertical movement
 Shift | Faster movement
