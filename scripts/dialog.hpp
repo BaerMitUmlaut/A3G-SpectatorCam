@@ -1,4 +1,4 @@
-class titlePlayername {
+class A3GSC_titlePlayername {
 	idd = -1;
 	onLoad = "uiNamespace setVariable ['dispPlayerName', (_this select 0)]";
 	duration = 5;
@@ -22,7 +22,7 @@ class titlePlayername {
 	};
 };
 
-class progressBar {
+class A3GSC_progressBar {
 	type = 8;
 	style = 0;
 	w = 0.3;
@@ -33,7 +33,7 @@ class progressBar {
 	x = safeZoneX + safeZoneW - 0.5;
 };
 
-class statsText {
+class A3GSC_statsText {
 	type = 0;
 	style = 0;
 	colorBackground[] = {0,0,0,0};
@@ -45,44 +45,44 @@ class statsText {
 	x = safeZoneX + safeZoneW - 0.6;
 };
 
-class titlePlayerstats {
+class A3GSC_titlePlayerstats {
 	idd = -1;
 	onLoad = "uiNamespace setVariable ['dispPlayerStats', (_this select 0)]";
 	duration = 86400;
 	fadein = 0.5;
 	fadeout = 0;
 	class controls {
-		class ctrlFatigueBar : progressBar {
+		class A3GSC_ctrlFatigueBar : A3GSC_progressBar {
 			idc = 1;
 			y = safeZoneY + safeZoneH - 0.4;
 		};
-		class ctrlFatigueBarText : statsText {
+		class A3GSC_ctrlFatigueBarText : A3GSC_statsText {
 			idc = -1;
 			y = safeZoneY + safeZoneH - 0.408;
 			text = "Fatigue:";
 		};
 
-		class ctrlBloodBar : progressBar {
+		class A3GSC_ctrlBloodBar : A3GSC_progressBar {
 			idc = 2;
 			y = safeZoneY + safeZoneH - 0.3;
 		};
-		class ctrlBloodBarText : statsText {
+		class A3GSC_ctrlBloodBarText : A3GSC_statsText {
 			idc = -2;
 			y = safeZoneY + safeZoneH - 0.308;
 			text = "Blood:";
 		};
 
-		class ctrlPainBar : progressBar {
+		class A3GSC_ctrlPainBar : A3GSC_progressBar {
 			idc = 3;
 			y = safeZoneY + safeZoneH - 0.2;
 		};
-		class ctrlPainBarText : statsText {
+		class A3GSC_ctrlPainBarText : A3GSC_statsText {
 			idc = -3;
 			y = safeZoneY + safeZoneH - 0.208;
 			text = "Pain:";
 		};
 
-		class ctrlStatusText : statsText {
+		class A3GSC_ctrlStatusText : A3GSC_statsText {
 			idc = 4;
 			sizeEx = 0.06;
 			h = 0.06;

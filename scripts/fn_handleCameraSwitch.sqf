@@ -7,6 +7,7 @@ switch (A3G_SpectatorCamViewMode) do {
 		A3G_SpectatorCamDir = direction A3G_SpectatorCamTarget;
 		A3G_SpectatorCamPitch = -45;
 		A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call fnCalcVecDir;
+		A3G_SpectatorCam setVectorDirAndUp A3G_SpectatorCamVecDirUp;
 		A3G_SpectatorCamHeight = 3;
 
 		A3G_SpectatorCam setPos (A3G_SpectatorCamTarget modelToWorld [0, -2.5, 3]);
@@ -18,6 +19,7 @@ switch (A3G_SpectatorCamViewMode) do {
 		cameraEffectEnableHUD true;
 	};
 	case 1: {
+		detach A3G_SpectatorCam;
 		if(A3G_SpectatorCamPitch > 0) then {
 			A3G_SpectatorCam attachTo [A3G_SpectatorCamTarget, [0.5,-1.5,1.5]];
 		} else {
@@ -46,11 +48,11 @@ switch (A3G_SpectatorCamViewMode) do {
 			};
 		};
 		if (isPlayer A3G_SpectatorCamTarget) then {
-			cutRsc ["titlePlayername", "PLAIN"];
+			cutRsc ["A3GSC_titlePlayername", "PLAIN"];
 			((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 		};
 		0 spawn {
-			("playerStats" call BIS_fnc_rscLayer) cutRsc ["titlePlayerstats", "PLAIN"];
+			("playerStats" call BIS_fnc_rscLayer) cutRsc ["A3GSC_titlePlayerstats", "PLAIN"];
 			while {A3G_SpectatorCamViewMode > 0 && !(isNull A3G_SpectatorCamTarget)} do {
 				((uiNamespace getVariable "dispPlayerStats") displayCtrl 1) progressSetPosition (getFatigue A3G_SpectatorCamTarget);
 				((uiNamespace getVariable "dispPlayerStats") displayCtrl 2) progressSetPosition (A3G_SpectatorCamTarget getVariable ["AGM_Blood", 1]);

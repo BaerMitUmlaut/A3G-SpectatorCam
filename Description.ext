@@ -11,8 +11,10 @@ class CfgRespawnTemplates {
 	};
 };
 
-#include "scripts\dialog.hpp"
-class CfgFunctions
-{
+class RscTitles {
+	#include "scripts\dialog.hpp"
+};
+
+class CfgFunctions {
 	#include "scripts\CfgFunctions.hpp"
 };

@@ -3,15 +3,18 @@ _unit = _this select 0;
 //try {[player, true] call TFAR_fnc_forceSpectator} catch {};
 //try {[true] call acre_api_fnc_setSpectator} catch {};
 
-sleep 1;
-
-player setVariable ["AGM_Bleeding", false];
-player setVariable ["AGM_Unconscious", false];
-player setVariable ["AGM_InPain", false];
-"chromAberration" ppEffectEnable false;
-"ColorCorrections" ppEffectEnable false;
-"RadialBlur" ppEffectEnable false;
-try {[false] call AGM_Core_fnc_disableUserInput} catch {};
+try {
+	player setVariable ["AGM_Bleeding", false];
+	player setVariable ["AGM_Unconscious", false];
+	player setVariable ["AGM_InPain", false];
+	AGM_BloodLevel_CC ppEffectEnable False;
+	AGM_Unconscious_CC ppEffectEnable False;
+	AGM_Unconscious_RB ppEffectEnable False;
+	AGM_Blinding_CC ppEffectEnable False;
+	AGM_Pain_CC ppEffectEnable False;
+	AGM_Pain_CA ppEffectEnable False;
+	[false] call AGM_Core_fnc_disableUserInput;
+} catch {};
 
 A3G_SpectatorCamWDown = false;
 A3G_SpectatorCamADown = false;
@@ -67,7 +70,7 @@ cameraEffectEnableHUD true;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) + 1) mod (count playableUnits));
 			};
-			[] call A3GSC_fnc_HandleVisionSwitch;
+			[] call A3GSC_fnc_HandleCameraSwitch;
 		};
 		case 0xCB: {
 			if !(isPlayer A3G_SpectatorCamTarget) then {
@@ -75,7 +78,7 @@ cameraEffectEnableHUD true;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) - 1 + (count playableUnits)) mod (count playableUnits));
 			};
-			[] call A3GSC_fnc_HandleVisionSwitch;
+			[] call A3GSC_fnc_HandleCameraSwitch;
 		};
 	};
 	false
