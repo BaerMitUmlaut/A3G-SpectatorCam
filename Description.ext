@@ -5,8 +5,14 @@ respawn = 0;
 respawnTemplates[] = {"A3G-SpectatorCam"};
 
 class CfgRespawnTemplates {
-  class A3G-SpectatorCam {
-    onPlayerKilled.sqf = "\scripts\initCam.sqf";
-    respawnDelay = 1e39;
-  };
+	class A3G-SpectatorCam {
+		onPlayerKilled = "scripts\initCam.sqf";
+		respawnDelay = 1e39;
+	};
+};
+
+#include "scripts\dialog.hpp"
+class CfgFunctions
+{
+	#include "scripts\CfgFunctions.hpp"
 };

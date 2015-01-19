@@ -1,24 +1,17 @@
 _unit = _this select 0;
-_mode = _this select 1;
 
-if (count _this < 2) then {
-	_mode = 0;
-};
-
-try {[player, true] call TFAR_fnc_forceSpectator} catch {};
-try {[true] call acre_api_fnc_setSpectator} catch {};
+//try {[player, true] call TFAR_fnc_forceSpectator} catch {};
+//try {[true] call acre_api_fnc_setSpectator} catch {};
 
 sleep 1;
 
-player setVariable ['AGM_Bleeding', false];
-player setVariable ['AGM_Unconscious', false];
-player setVariable ['AGM_InPain', false];
-'chromAberration' ppEffectEnable false;
+player setVariable ["AGM_Bleeding", false];
+player setVariable ["AGM_Unconscious", false];
+player setVariable ["AGM_InPain", false];
+"chromAberration" ppEffectEnable false;
+"ColorCorrections" ppEffectEnable false;
+"RadialBlur" ppEffectEnable false;
 try {[false] call AGM_Core_fnc_disableUserInput} catch {};
-
-fnCalcVecDir = compileFinal preprocessFile "fn_calcVecDir.sqf";
-fnHandleCameraSwitch = compileFinal preprocessFile "fn_handleCameraSwitch.sqf";
-fnHandleVisionSwitch = compileFinal preprocessFile "fn_handleVisionSwitch.sqf";
 
 A3G_SpectatorCamWDown = false;
 A3G_SpectatorCamADown = false;
@@ -35,7 +28,7 @@ A3G_SpectatorCamVisionMode = 0;		//0 - standard | 1 - night vision | 2 - thermal
 A3G_SpectatorCamTarget = _unit;
 A3G_SpectatorCamDir = direction A3G_SpectatorCamTarget;
 A3G_SpectatorCamPitch = -45;
-A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call fnCalcVecDir;
+A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call A3GSC_fnc_CalcVecDir;
 A3G_SpectatorCamHeight = 3;
 
 A3G_SpectatorCam = "camera" camCreate (A3G_SpectatorCamTarget modelToWorld [0, -2.5, 3]);
@@ -51,7 +44,7 @@ cameraEffectEnableHUD true;
 	_deltaY = _this select 2;
 	A3G_SpectatorCamDir = A3G_SpectatorCamDir + _deltaX;
 	A3G_SpectatorCamPitch = -89 max (89 min (A3G_SpectatorCamPitch - _deltaY));
-	A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call fnCalcVecDir;
+	A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call A3GSC_fnc_CalcVecDir;
 }];
 
 (findDisplay 46) displayRemoveAllEventHandlers "KeyDown";
@@ -66,15 +59,15 @@ cameraEffectEnableHUD true;
 		case 0x12: {A3G_SpectatorCamEDown = true};
 		case 0x2A: {A3G_SpectatorCamShiftDown = true};
 		case 0x38: {A3G_SpectatorCamAltDown = true};
-		case 0x39: {A3G_SpectatorCamViewMode = (A3G_SpectatorCamViewMode + 1) mod 3; [] call fnHandleCameraSwitch};
-		case 0x31: {A3G_SpectatorCamVisionMode = (A3G_SpectatorCamVisionMode + 1) mod 3; [] call fnHandleVisionSwitch};
+		case 0x39: {A3G_SpectatorCamViewMode = (A3G_SpectatorCamViewMode + 1) mod 3; [] call A3GSC_fnc_HandleCameraSwitch};
+		case 0x31: {A3G_SpectatorCamVisionMode = (A3G_SpectatorCamVisionMode + 1) mod 3; [] call A3GSC_fnc_HandleVisionSwitch};
 		case 0xCD: {
 			if !(isPlayer A3G_SpectatorCamTarget) then {
 				A3G_SpectatorCamTarget = playableUnits select 0;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) + 1) mod (count playableUnits));
 			};
-			[] call fnHandleVisionSwitch;
+			[] call A3GSC_fnc_HandleVisionSwitch;
 		};
 		case 0xCB: {
 			if !(isPlayer A3G_SpectatorCamTarget) then {
@@ -82,7 +75,7 @@ cameraEffectEnableHUD true;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) - 1 + (count playableUnits)) mod (count playableUnits));
 			};
-			[] call fnHandleVisionSwitch;
+			[] call A3GSC_fnc_HandleVisionSwitch;
 		};
 	};
 	false
