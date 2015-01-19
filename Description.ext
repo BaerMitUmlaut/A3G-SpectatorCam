@@ -1,0 +1,12 @@
+// This is an example for a Description.ext-file that activates the spectator cam when the player gets killed.
+// If you already have a Description.ext, just add these lines to it.
+
+respawn = 0;
+respawnTemplates[] = {"A3G-SpectatorCam"};
+
+class CfgRespawnTemplates {
+  class A3G-SpectatorCam {
+    onPlayerKilled.sqf = "\scripts\initCam.sqf";
+    respawnDelay = 1e39;
+  };
+};
