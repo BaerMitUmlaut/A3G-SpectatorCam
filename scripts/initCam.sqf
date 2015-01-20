@@ -1,7 +1,7 @@
 _unit = _this select 0;
 
-//try {[player, true] call TFAR_fnc_forceSpectator} catch {};
-//try {[true] call acre_api_fnc_setSpectator} catch {};
+try {[player, true] call TFAR_fnc_forceSpectator} catch {};
+try {[true] call acre_api_fnc_setSpectator} catch {};
 
 try {
 	player setVariable ["AGM_Bleeding", false];
@@ -70,6 +70,8 @@ cameraEffectEnableHUD true;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) + 1) mod (count playableUnits));
 			};
+			cutRsc ["A3GSC_titlePlayername", "PLAIN"];
+			((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 			[] call A3GSC_fnc_HandleCameraSwitch;
 		};
 		case 0xCB: {
@@ -78,6 +80,8 @@ cameraEffectEnableHUD true;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) - 1 + (count playableUnits)) mod (count playableUnits));
 			};
+			cutRsc ["A3GSC_titlePlayername", "PLAIN"];
+			((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 			[] call A3GSC_fnc_HandleCameraSwitch;
 		};
 	};
