@@ -6,7 +6,7 @@ switch (A3G_SpectatorCamViewMode) do {
 
 		A3G_SpectatorCamDir = direction A3G_SpectatorCamTarget;
 		A3G_SpectatorCamPitch = -45;
-		A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call fnCalcVecDir;
+		A3G_SpectatorCamVecDirUp = [A3G_SpectatorCamDir, A3G_SpectatorCamPitch] call A3GSC_fnc_CalcVecDir;
 		A3G_SpectatorCamHeight = 3;
 
 		A3G_SpectatorCam setPos (A3G_SpectatorCamTarget modelToWorld [0, -2.5, 3]);
