@@ -57,15 +57,15 @@ switch (A3G_SpectatorCamViewMode) do {
 				((uiNamespace getVariable "dispPlayerStats") displayCtrl 2) progressSetPosition (A3G_SpectatorCamTarget getVariable ["AGM_Blood", 1]);
 				((uiNamespace getVariable "dispPlayerStats") displayCtrl 3) progressSetPosition (A3G_SpectatorCamTarget getVariable ["AGM_Pain", 0]);
 
-				if (A3G_SpectatorCamTarget getVariable ["AGM_isUnconscious", False]) then {
-					if ((damage A3G_SpectatorCamTarget) > 0) then {
-						((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Unconscious & Bleeding";
-					} else {
-						((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Unconscious";
-					};
+				if !(alive A3G_SpectatorCamTarget) then {
+					((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Dead";
 				} else {
-					if !(alive A3G_SpectatorCamTarget) then {
-						((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Dead";
+					if (A3G_SpectatorCamTarget getVariable ["AGM_isUnconscious", False]) then {
+						if ((damage A3G_SpectatorCamTarget) > 0) then {
+							((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Unconscious & Bleeding";
+						} else {
+							((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Unconscious";
+						};
 					} else {
 						if (damage A3G_SpectatorCamTarget > 0) then {
 							((uiNamespace getVariable "dispPlayerStats") displayCtrl 4) ctrlSetText "Bleeding";
