@@ -5,7 +5,7 @@ class CfgRespawnTemplates {
 	class A3GSpectatorCam {
 		displayName = "A3GSpectatorCam";
 		onPlayerKilled = "scripts\initCam.sqf";
-		respawnDelay = 1e39;
+		respawnDelay = 259200;
 	};
 };
 
