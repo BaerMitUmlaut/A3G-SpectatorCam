@@ -65,7 +65,7 @@ cameraEffectEnableHUD true;
 		case 0x39: {A3G_SpectatorCamViewMode = (A3G_SpectatorCamViewMode + 1) mod 3; [] call A3GSC_fnc_HandleCameraSwitch};
 		case 0x31: {A3G_SpectatorCamVisionMode = (A3G_SpectatorCamVisionMode + 1) mod 3; [] call A3GSC_fnc_HandleVisionSwitch};
 		case 0xCD: {
-			if !(isPlayer A3G_SpectatorCamTarget) then {
+			if !(isPlayer A3G_SpectatorCamTarget && (count playableUnits > 0)) then {
 				A3G_SpectatorCamTarget = playableUnits select 0;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) + 1) mod (count playableUnits));
@@ -75,7 +75,7 @@ cameraEffectEnableHUD true;
 			[] call A3GSC_fnc_HandleCameraSwitch;
 		};
 		case 0xCB: {
-			if !(isPlayer A3G_SpectatorCamTarget) then {
+			if !(isPlayer A3G_SpectatorCamTarget && (count playableUnits > 0)) then {
 				A3G_SpectatorCamTarget = playableUnits select 0;
 			} else {
 				A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) - 1 + (count playableUnits)) mod (count playableUnits));
