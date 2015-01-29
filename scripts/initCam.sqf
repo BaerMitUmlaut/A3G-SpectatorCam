@@ -176,39 +176,39 @@ addMissionEventHandler ["Draw3D", {
 		switch (side group _x) do {
 			case west: {
 				if ((A3G_SpectatorCam distance _x > 500) && (isFormationLeader _x)) then {
-					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\b_unknown.paa", [0,0,0.8,0.5], _tagPosition, 1, 1, 0];
+					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\b_unknown.paa", [0,0.3,0.6,0.5], _tagPosition, 1, 1, 0];
 				} else {
 					if (A3G_SpectatorCam distance leader group _x <= 500) then {
 						if (captive _x) then {
-							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0,0,0.8,0.5], _tagPosition, 0.5, 0.5, 0];
+							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0,0.3,0.6,0.5], _tagPosition, 0.5, 0.5, 0];
 						} else {
-							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0,0,0.8,0.5], _tagPosition, 1, 1, 0];
+							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0,0.3,0.6,0.5], _tagPosition, 1, 1, 0];
 						};
 					};
 				};
 			};
 			case east: {
 				if ((A3G_SpectatorCam distance _x > 500) && (isFormationLeader _x)) then {
-					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\o_unknown.paa", [0.6,0,0,0.5], _tagPosition, 1, 1, 0];
+					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\o_unknown.paa", [0.5,0,0,0.5], _tagPosition, 1, 1, 0];
 				} else {
 					if (A3G_SpectatorCam distance leader group _x <= 500) then {
 						if (captive _x) then {
-							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0.64,0,0,0.5], _tagPosition, 0.5, 0.5, 0];
+							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0.5,0,0,0.5], _tagPosition, 0.5, 0.5, 0];
 						} else {
-							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0.64,0,0,0.5], _tagPosition, 1, 1, 0];
+							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0.5,0,0,0.5], _tagPosition, 1, 1, 0];
 						};
 					};
 				};
 			};
 			case independent: {
 				if ((A3G_SpectatorCam distance _x > 500) && (isFormationLeader _x)) then {
-					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\n_unknown.paa", [0,0.64,0,0.5], _tagPosition, 1, 1, 0];
+					drawIcon3D ["\A3\ui_f\data\map\Markers\NATO\n_unknown.paa", [0,0.5,0,0.5], _tagPosition, 1, 1, 0];
 				} else {
 					if (A3G_SpectatorCam distance leader group _x <= 500) then {
 						if (captive _x) then {
-							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0,0.64,0,0.5], _tagPosition, 0.5, 0.5, 0];
+							drawIcon3D ["\a3\ui_f\data\map\MapControl\tree_ca.paa", [0,0.5,0,0.5], _tagPosition, 0.5, 0.5, 0];
 						} else {
-							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0,0.64,0,0.5], _tagPosition, 1, 1, 0];
+							drawIcon3D ["\a3\ui_f\data\map\Markers\Military\dot_ca.paa", [0,0.5,0,0.5], _tagPosition, 1, 1, 0];
 						};
 					};
 				};
