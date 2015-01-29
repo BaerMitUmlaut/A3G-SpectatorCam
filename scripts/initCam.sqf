@@ -40,6 +40,8 @@ A3G_SpectatorCam cameraEffect ["External", "BACK"];
 A3G_SpectatorCam camCommit 0;
 showCinemaBorder false;
 cameraEffectEnableHUD true;
+A3G_SpectatorCamHelpVisible = true;
+("A3GSC_Help" call BIS_fnc_rscLayer) cutRsc ["A3GSC_titleHelp", "PLAIN"];
 
 (findDisplay 46) displayRemoveAllEventHandlers "MouseMoving";
 (findDisplay 46) displayAddEventHandler ["MouseMoving", {
@@ -92,6 +94,15 @@ cameraEffectEnableHUD true;
 			} else {
 				cutRsc ["A3GSC_titlePlayername", "PLAIN"];
 				((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
+			};
+		};
+		case 0x23: {
+			if (A3G_SpectatorCamHelpVisible) then {
+				A3G_SpectatorCamHelpVisible = false;
+				("A3GSC_Help" call BIS_fnc_rscLayer) cutText ["", "PLAIN"];
+			} else {
+				A3G_SpectatorCamHelpVisible = true;
+				("A3GSC_Help" call BIS_fnc_rscLayer) cutRsc ["A3GSC_titleHelp", "PLAIN"];
 			};
 		};
 	};

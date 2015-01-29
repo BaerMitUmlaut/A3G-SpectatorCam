@@ -92,3 +92,145 @@ class A3GSC_titlePlayerstats {
 		};
 	};
 };
+
+class A3GSC_keyText {
+	type = 0;
+	style = 0;
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {0.77,0.51,0.08,1};
+	font = "PuristaBold";
+	sizeEx = 0.04;
+	h = 0.04;
+	w = 0.1;
+	x = safeZoneX + safeZoneW - 0.4;
+};
+
+class A3GSC_descText {
+	type = 0;
+	style = 0;
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {1,1,1,1};
+	font = "PuristaMedium";
+	sizeEx = 0.04;
+	h = 0.04;
+	w = 0.3;
+	x = safeZoneX + safeZoneW - 0.3;
+};
+
+class A3GSC_titleHelp {
+	idd = -1;
+	onLoad = "uiNamespace setVariable ['dispHelp', (_this select 0)]";
+	duration = 86400;
+	fadein = 0.5;
+	fadeout = 0;
+	class controls {
+		class Background {
+			type = 0;
+			style = 0;
+			idc = -1;
+			colorBackground[] = {0.16,0.16,0.16,0.5};
+			colorText[] = {0.16,0.16,0.16,1};
+			font = "PuristaBold";
+			sizeEx = 0.04;
+			text = "";
+			h = 0.6;
+			w = 0.45;
+			x = safeZoneX + safeZoneW - 0.45;
+			y = safeZoneY + safeZoneH/2 - 0.3;
+		}
+		class A3GSC_Header {
+			idc = -1;
+			type = 0;
+			style = 0;
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaBold";
+			sizeEx = 0.08;
+			h = 0.08;
+			w = 0.45;
+			x = safeZoneX + safeZoneW - 0.4;
+			y = safeZoneY + safeZoneH/2 - 0.25;
+			text = "Controls";
+		};
+		class A3GSC_keyBind0 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.15;
+			text = "H";
+		};
+		class A3GSC_keyDesc0 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.15;
+			text = "Show/hide help";
+		};
+		class A3GSC_keyBind1 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.1;
+			text = "WASD";
+		};
+		class A3GSC_keyDesc1 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.1;
+			text = "Move camera";
+		};
+		class A3GSC_keyBind2 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.05;
+			text = "Q/E";
+		};
+		class A3GSC_keyDesc2 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0.05;
+			text = "Raise/Lower camera";
+		};
+		class A3GSC_keyBind3 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0;
+			text = "Shift";
+		};
+		class A3GSC_keyDesc3 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 - 0;
+			text = "Faster movement";
+		};
+		class A3GSC_keyBind4 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.05;
+			text = "Alt";
+		};
+		class A3GSC_keyDesc4 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.05;
+			text = "Slower movement";
+		};
+		class A3GSC_keyBind5 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.1;
+			text = "N";
+		};
+		class A3GSC_keyDesc5 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.1;
+			text = "Switch vision mode";
+		};
+		class A3GSC_keyBind6 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.15;
+			text = "Space";
+		};
+		class A3GSC_keyDesc6 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.15;
+			text = "Switch camera mode";
+		};
+		class A3GSC_keyBind7 : A3GSC_keyText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.2;
+			text = "←/→";
+		};
+		class A3GSC_keyDesc7 : A3GSC_descText {
+			idc = -1;
+			y = safeZoneY + safeZoneH/2 + 0.2;
+			text = "Switch to next player";
+		};
+	};
+};
