@@ -3,7 +3,7 @@ A simple spectator cam script made for AGM users. Compatible with ACRE and TFAR.
 
 ## Usage
 To activate the camera when the player gets killed just copy the Description.ext and the scripts folder provided into your missions folder (usually found under `...\My Documents\Arma 3 - Other Profiles\Profilename\missions\Missioname.Mapname`). If you already have a Description.ext, copy the contents of the one provided into yours. Make sure you don't have any duplicate settings in your Description.ext.  
-You can also execute the camera during the mission by using `[player] execVM "/scripts/initCam.sqf"`, just be aware that there is right now no way to exit the spectator camera, so you will be stuck in the camera until you respawn.
+You can also execute the camera during the mission by using `[player] execVM "a3g-spectatorcam\initCam.sqf"`, just be aware that there is right now no way to exit the spectator camera, so you will be stuck in the camera until you respawn.
 
 ## Controls
 Keybind | Usage
