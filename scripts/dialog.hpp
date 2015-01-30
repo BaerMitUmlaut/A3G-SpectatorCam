@@ -1,6 +1,6 @@
 class A3GSC_titlePlayername {
 	idd = -1;
-	onLoad = "uiNamespace setVariable ['dispPlayerName', (_this select 0)]";
+	onLoad = "uiNamespace setVariable ['A3GSC_dispPlayerName', (_this select 0)]";
 	duration = 5;
 	fadein = 0.2;
 	fadeout = 1;
@@ -47,7 +47,7 @@ class A3GSC_statsText {
 
 class A3GSC_titlePlayerstats {
 	idd = -1;
-	onLoad = "uiNamespace setVariable ['dispPlayerStats', (_this select 0)]";
+	onLoad = "uiNamespace setVariable ['A3GSC_dispPlayerStats', (_this select 0)]";
 	duration = 86400;
 	fadein = 0.5;
 	fadeout = 0;
@@ -119,7 +119,7 @@ class A3GSC_descText {
 
 class A3GSC_titleHelp {
 	idd = -1;
-	onLoad = "uiNamespace setVariable ['dispHelp', (_this select 0)]";
+	onLoad = "";
 	duration = 86400;
 	fadein = 0.5;
 	fadeout = 0;

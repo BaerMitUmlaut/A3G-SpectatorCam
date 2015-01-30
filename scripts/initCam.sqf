@@ -74,11 +74,11 @@ A3G_SpectatorCamHelpVisible = true;
 					A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) + 1) mod (count playableUnits));
 				};
 				cutRsc ["A3GSC_titlePlayername", "PLAIN"];
-				((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
+				((uiNamespace getVariable "A3GSC_dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 				[] call A3GSC_fnc_HandleCameraSwitch;
 			} else {
 				cutRsc ["A3GSC_titlePlayername", "PLAIN"];
-				((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
+				((uiNamespace getVariable "A3GSC_dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 			};
 		};
 		case 0xCB: {
@@ -89,11 +89,11 @@ A3G_SpectatorCamHelpVisible = true;
 					A3G_SpectatorCamTarget = playableUnits select (((playableUnits find A3G_SpectatorCamTarget) - 1 + (count playableUnits)) mod (count playableUnits));
 				};
 				cutRsc ["A3GSC_titlePlayername", "PLAIN"];
-				((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
+				((uiNamespace getVariable "A3GSC_dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 				[] call A3GSC_fnc_HandleCameraSwitch;
 			} else {
 				cutRsc ["A3GSC_titlePlayername", "PLAIN"];
-				((uiNamespace getVariable "dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
+				((uiNamespace getVariable "A3GSC_dispPlayerName") displayCtrl 1) ctrlSetText (name A3G_SpectatorCamTarget);
 			};
 		};
 		case 0x23: {
