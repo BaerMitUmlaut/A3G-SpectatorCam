@@ -20,6 +20,10 @@ if ("agm_medical" in activatedAddons) then {
 	[false] call AGM_Core_fnc_disableUserInput;
 };
 
+if ("agm_nametags" in activatedAddons) then {
+	AGM_NameTags_PlayerNamesViewDistance = 100;
+};
+
 A3G_SpectatorCamWDown = false;
 A3G_SpectatorCamADown = false;
 A3G_SpectatorCamSDown = false;
@@ -221,4 +225,3 @@ addMissionEventHandler ["Draw3D", {
 	} foreach allUnits;
 
 }];
-
