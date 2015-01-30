@@ -4,14 +4,14 @@ respawnTemplates[] = {"A3GSpectatorCam"};
 class CfgRespawnTemplates {
 	class A3GSpectatorCam {
 		displayName = "A3GSpectatorCam";
-		onPlayerKilled = "scripts\initCam.sqf";
+		onPlayerKilled = "a3g-spectatorcam\initCam.sqf";
 		respawnDelay = 259200;
 	};
 };
 
 class RscTitles {
-	#include "scripts\dialog.hpp"
+	#include "a3g-spectatorcam\dialog.hpp"
 };
 class CfgFunctions {
-	#include "scripts\CfgFunctions.hpp"
+	#include "a3g-spectatorcam\CfgFunctions.hpp"
 };

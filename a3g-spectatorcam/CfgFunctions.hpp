@@ -1,6 +1,6 @@
 class A3GSC {
 	class Functions {
-		file = "scripts";
+		file = "a3g-spectatorcam";
 		class handleVisionSwitch {};
 		class handleCameraSwitch {};
 		class calcVecDir {};
