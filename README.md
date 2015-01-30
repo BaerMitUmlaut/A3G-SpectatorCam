@@ -8,6 +8,7 @@ You can also execute the camera during the mission by using `[player] execVM "a3
 ## Controls
 Keybind | Usage
 ------- | -----
+H | Show/Hide help
 WASD | General movement
 QE | Vertical movement
 Shift | Faster movement
