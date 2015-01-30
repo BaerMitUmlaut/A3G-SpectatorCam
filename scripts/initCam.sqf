@@ -1,9 +1,9 @@
 _unit = _this select 0;
 
-try {[player, true] call TFAR_fnc_forceSpectator} catch {};
-try {[true] call acre_api_fnc_setSpectator} catch {};
+if ("task_force_radio" in activatedAddons) then {[player, true] call TFAR_fnc_forceSpectator};
+if ("acre_main" in activatedAddons) then {[true] call acre_api_fnc_setSpectator};
 
-try {
+if ("agm_medical" in activatedAddons) then {
 	player setVariable ["AGM_Bleeding", false];
 	player setVariable ["AGM_Unconscious", false];
 	player setVariable ["AGM_InPain", false];
@@ -14,7 +14,7 @@ try {
 	AGM_Pain_CC ppEffectEnable False;
 	AGM_Pain_CA ppEffectEnable False;
 	[false] call AGM_Core_fnc_disableUserInput;
-} catch {};
+};
 
 A3G_SpectatorCamWDown = false;
 A3G_SpectatorCamADown = false;
