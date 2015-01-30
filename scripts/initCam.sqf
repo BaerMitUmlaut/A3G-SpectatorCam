@@ -1,5 +1,9 @@
 _unit = _this select 0;
 
+if (!(alive player) && isMultiplayer && (count playableUnits == 0)) then {
+	[["LOSER", false],"BIS_fnc_endMission",true,true] call BIS_fnc_MP;
+};
+
 if ("task_force_radio" in activatedAddons) then {[player, true] call TFAR_fnc_forceSpectator};
 if ("acre_main" in activatedAddons) then {[true] call acre_api_fnc_setSpectator};
 
